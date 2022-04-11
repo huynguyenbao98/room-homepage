@@ -1,0 +1,287 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Spartan', sans-serif;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    p {
+        font-size: 0.85rem;
+        line-height: 1.5rem;
+        color: hsl(0, 0%, 63%);
+        font-weight: 500;
+    }
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.2fr 1.3fr 0.7fr 0.9fr 0.7fr;
+    grid-template-areas:
+    "nav"
+    "content1"
+    "picture1"
+    "content2"
+    "picture2";
+
+    @include breakpoint-up(medium){
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 1.335fr 0.665fr;
+        gap: 0;
+    }
+}
+
+nav{
+    grid-area: nav;
+    position: relative;
+    .coverImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+
+    .slides{
+        display: flex;
+    }
+
+    .text {
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        a {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            transition: color 300ms ease-in-out;
+
+            &::before{
+                content:"";
+                display: block;
+                position: absolute;
+                height: 3px;
+                left: 0;
+                right: 0;
+                bottom: -20px;
+            }
+
+            &:nth-child(n+3){
+                &:hover{
+                    &::before{
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint-up(medium){
+        grid-column: 1 / span 6;
+        a{
+            display: flex;
+            margin-top: 3.75rem;
+            margin-left: 4rem;
+            &:not(:first-child) {
+                margin-left: 2rem;
+                align-items: flex-end;
+                }
+        }
+    }
+}
+
+#content1 {
+    grid-area: "content1";
+    z-index: 1;
+    background-color: white;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    h1 {
+        margin: 0;
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 1rem;
+        margin-bottom: 3.5rem;
+    }
+
+    h2 {
+        position: relative;
+        margin: 0;
+        bottom: 0;
+        letter-spacing: 0.85em;
+        font-size: 1rem;
+        color: black;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    @include breakpoint-up(medium){
+        grid-column: 7 / span 4;
+        padding-top: 3.75rem;
+        p{
+            font-size: 11px;
+        }
+    }
+}
+
+#picture1 {
+    grid-area: "picture1";
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include breakpoint-up(medium){
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+}
+
+#content2 {
+    grid-area: "content2";
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    h3{
+        margin-top: 0;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+    }
+
+    @include breakpoint-up(medium){
+        grid-column: 4 / span 4;
+        grid-row: 2;
+
+        padding-top: 3.4375rem;
+        padding-bottom: 2.1875rem;
+        padding-right: 1.5625rem;
+        padding-left: 1.5625rem;
+
+        p{
+            font-size: 10px;
+            margin: 0;
+        }
+
+        h3{
+            margin-bottom: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3rem;
+        }
+    }
+}
+
+#picture2 {
+    grid-area: "picture2";
+    
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include breakpoint-up(medium){
+        grid-column: 8 / span 3;
+        grid-row: 2;
+        justify-content: stretch;
+    }
+}
+
+// minor modification
+
+.logo{
+    img{
+
+        @include breakpoint-down(small){
+            width: 40%;
+            margin-top: 3rem;
+            margin-left: 9.5rem;
+        }
+
+        @include breakpoint-up(medium){
+            width:100%;
+            padding-top: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+
+.hamburgerMenu {
+    display: flex;
+}
+
+//buttons
+
+.angle-btn{
+    position: relative;
+    margin-left: -3.125rem;
+    margin-right: -3.5rem;
+    bottom: -3.75rem;
+    @include breakpoint-down(small){
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        bottom: 0rem;
+    }
+
+    button{
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        float: left;
+        border: none;
+        cursor: pointer;
+        color: white;
+        background-color: black;
+        font-size: 2rem;
+        font-weight: lighter;
+
+        &:hover{
+            opacity: 60%;
+        }
+    }
+}
+
+.mobileSlides{
+    display: flex;
+    overflow-x: hidden;
+    img{
+        display: absolute;
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
+}
+
+//visibility
+
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}

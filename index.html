@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Room homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/app/css/style.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+      <nav>
+        <div class="text">
+          <a href="#" class="logo"><img src="/images/logo.svg" alt="Logo"></a>
+          <a href="#" class="hide-for-mobile">home</a>
+          <a href="#" class="hide-for-mobile">shop</a>
+          <a href="#" class="hide-for-mobile">about</a>
+          <a href="#" class="hide-for-mobile">contact</a>
+        </div>
+
+        <div class="mobileSlides coverImage hide-for-desktop">
+          <img src="/images/mobile-image-hero-1.jpg" alt="image" id="firstImage" class="hide-for-desktop coverImage slide">
+          <img src="/images/mobile-image-hero-2.jpg" alt="image" class="hide-for-desktop coverImage slide">
+          <img src="/images/mobile-image-hero-3.jpg" alt="image" class="hide-for-desktop coverImage slide">
+        </div>
+
+        <div class="angle-btn hide-for-desktop">
+          <button id="leftAngle1"> < </button>
+          <button id="rightAngle1"> > </button>
+        </div>
+
+        <div class="slides coverImage hide-for-mobile">
+          <img src="/images/desktop-image-hero-1.jpg" alt="image" class="hide-for-mobile coverImage slide">
+          <img src="/images/desktop-image-hero-2.jpg" alt="image" class="hide-for-mobile coverImage slide">
+          <img src="/images/desktop-image-hero-3.jpg" alt="image" class="hide-for-mobile coverImage slide">
+        </div>
+      </nav>
+
+  
+    <div id="content1">
+      <h1>Discover innovative ways to decorate</h1>
+      <p>We provide unmatched quality, comfort, and style for property owners across the country. 
+        Our experts combine form and function in bringing your vision to life. Create a room in your 
+        own style with our collection and make your property a reflection of you and what you love.</p>
+        <a href="#"><h2>SHOP NOW <img src="/images/icon-arrow.svg" alt=""></h2></a>
+        <div class="angle-btn hide-for-mobile">
+          <button class="leftAngle"> < </button>
+          <button class="rightAngle"> > </button>
+        </div>
+    </div>
+
+
+    <div id="picture1">
+      <img src="/images/image-about-dark.jpg" alt="A black chair">
+    </div>
+
+  
+    <div id="content2">
+      <h3>ABOUT OUR FURNITURE</h3>
+      <p>Our multifunctional collection blends design and function to suit your individual taste.
+        Make each room unique, or pick a cohesive theme that best express your interests and what
+        inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+        or anything in between. Product specialists are available to help you create your dream space.</p>
+    </div>
+  
+
+    <div id="picture2">
+      <img src="/images/image-about-light.jpg" alt="Image about light">
+    </div>
+    
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="/app/js/slide.js"></script>
+</body>
+</html>

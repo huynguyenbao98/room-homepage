@@ -1,0 +1,40 @@
+#content1 {
+    grid-area: "content1";
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    h1 {
+        margin: 0;
+        font-weight: 700;
+    }
+    p {
+        margin-top: 1rem;
+        margin-bottom: 3.5rem;
+    }
+    h2 {
+        position: relative;
+        margin: 0;
+        bottom: 0;
+        letter-spacing: 0.85em;
+        font-size: 1rem;
+        color: black;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    @include breakpoint-up(large){
+        grid-column: 7 / span 4;
+        padding-top: 3.75rem;
+        padding-bottom: 3.75rem;
+        padding-right: 3.125rem;
+        padding-left: 3.125rem;
+        p{
+            font-size: 11px;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
